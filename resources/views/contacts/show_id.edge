@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  @if(customer)
+  <h4>
+    Hi {{customer.display_name}}
+  </h4> 
+  <p>Welcome to loyalty program</p>
+  <ul>
+    @each((attribute, key) in customer)
+      @if(key === "website")
+        <li> {{key}} : <a href={{attribute}} target="_blank">{{attribute}}</a></li>
+      @else
+        <li> {{key}} : {{attribute}} </li>
+      @end
+    @end
+  </ul>
+  @endif
+</body>
+</html>
