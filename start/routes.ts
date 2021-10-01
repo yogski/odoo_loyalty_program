@@ -26,6 +26,7 @@ Route.get('/', async ({ view }) => {
 
 Route.get('/login', 'AuthController.login');
 Route.get('contacts/:id', 'LoyaltiesController.showId');
+Route.get('/yay', 'LoyaltiesController.yay');
 Route.get('/dashboard', async ({params}) => {
   return params;
 })

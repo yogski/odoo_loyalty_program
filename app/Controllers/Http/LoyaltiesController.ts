@@ -30,4 +30,8 @@ export default class LoyaltiesController {
 
     return view.render('contacts/show_id', {customer});
   }
+
+  public async yay({view}) {
+    return view.render('home');
+  }
 }
