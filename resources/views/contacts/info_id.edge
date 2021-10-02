@@ -1,0 +1,32 @@
+@layout('layouts/main')
+@set('title', 'Contact Information')
+
+@section('body')
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <p class="title">
+        Title
+      </p>
+      <p class="subtitle">
+        Subtitle
+      </p>
+    </div>
+  </section>
+  <div class="container">
+    @if(customer)
+    <h4>
+      Hi {{customer.display_name}}
+    </h4> 
+    <p class="block">Welcome to loyalty program</p>
+    <ul>
+      @each((attribute, key) in customer)
+        @if(key === "website")
+          <li> {{key}} : <a href={{attribute}} target="_blank">{{attribute}}</a></li>
+        @else
+          <li> {{key}} : {{attribute}} </li>
+        @end
+      @end
+    </ul>
+    @endif  
+  </div>
+@end

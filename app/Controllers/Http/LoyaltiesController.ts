@@ -28,7 +28,7 @@ export default class LoyaltiesController {
       .where('res_partner.id', params.id)
       .first();
 
-    return view.render('contacts/show_id', {customer});
+    return view.render('contacts/info_id', {customer});
   }
 
   public async yay({view}) {
